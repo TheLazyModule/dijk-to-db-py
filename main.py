@@ -5,12 +5,20 @@ import os
 
 if os.path.exists(path="paths.geojson"):
     graph = read_to_graph(file_name="paths.geojson", should_densify_segments=True, distance=2)
-    print(graph.edges)
 
 
-#     db = Database(dbname='routes', user='postgres', host='localhost')
-#     db.connect()
-#     populate_db(db, graph)
+    # graph.nodes_to_csv()
+
+    db = Database(
+        dbname=os.environ.get("PGDATABASE"),
+        user=os.environ.get("PGUSER"),
+        host=os.environ.get("PGHOST"),
+        password=os.environ.get("PGPASSWORD")
+    )
+    db.connect()
+    populate_db(db, graph)
+
+    db.close()
 #
 #     distance_from_query_point, closest_node = graph.query_closest_location(x=-174320.829365919722477,
 #                                                                            y=744498.63213670917321,

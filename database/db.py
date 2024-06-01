@@ -3,11 +3,11 @@ import os
 
 
 class Database:
-    def __init__(self, dbname, user, host):
+    def __init__(self, dbname, user, host, password):
         self.dbname = dbname
         self.user = user
         self.host = host
-        self.password = os.environ.get("PASSWORD")
+        self.password = password
         self.connection = None
 
     def connect(self):

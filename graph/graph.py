@@ -6,7 +6,7 @@ from typing import Tuple
 
 class Node(object):
 
-    def __init__(self, point_id=None, label=None, x=None, y=None):
+    def __init__(self, label=None, x=None, y=None):
         self.label = label
         self.x = x
         self.y = y
@@ -56,25 +56,7 @@ class Graph(object):
         else:
             print(f"exported nodes successfully to {file_name}")
 
-    @staticmethod
-    def node_to_csv(node, file_name="closest_node.csv"):
 
-        headers = ['X', 'Y', 'L']
-        try:
-            with open(file_name, 'w', newline='') as file:
-                writer = csv.writer(file)
-                writer.writerow(headers)
-                writer.writerows([[node.x, node.y, node.label]])
-        except FileExistsError:
-            print("Could not export")
-        else:
-            print("exported node successfully")
-
-    def query_closest_location(self, x, y, label) -> Tuple[float, Node]:
-        other_node = Node(x=x, y=y, label=label)
-
-        return min(
-            [(self.get_weight(other_node, self.nodes[node]), self.nodes[node]) for node in self.nodes])
 
     @staticmethod
     def get_weight(from_node: Node, to_node: Node) -> float:
