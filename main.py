@@ -1,13 +1,9 @@
 from database.db import Database
-from dijkstra.dijkstra import dijkstra
 from utils.utils import read_to_graph, populate_db
 import os
 
 if os.path.exists(path="paths.geojson"):
     graph = read_to_graph(file_name="paths.geojson", should_densify_segments=True, distance=2)
-
-
-    # graph.nodes_to_csv()
 
     db = Database(
         dbname=os.environ.get("PGDATABASE"),
