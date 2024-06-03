@@ -7,8 +7,6 @@ up:
 down:
 	docker compose down -v
 
-server-container:
-	docker run --name routing-app -p 8080:8080 --network routes-network -e GIN_MODE=release -e  routing-app:latest
 
 postgres:
 	 docker run --name $(PG_CONTAINER_NAME) -p $(PG_PORT_MAPPING) -e POSTGRES_PASSWORD=$(PGPASSWORD) -e POSTGRES_USER=$(PGUSER) -d $(IMAGE)
@@ -20,7 +18,13 @@ dropdb:
 	 docker exec -it $(PG_CONTAINER_NAME) dropdb $(PGDATABASE) -f --username=$(PGUSER)
 
 run:
-	 python3 main.py
+	@echo "Running in development mode..."
+	@MODE=development python3 main.py
+
+run-prod:
+	@echo "Running in production mode..."
+	@MODE=production python3 main.py
+
 
 migrate_up:
 	migrate -path ./database/migrations -database "$(DATABASE_URL)" -verbose up

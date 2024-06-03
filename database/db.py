@@ -1,5 +1,6 @@
 from sqlalchemy import text, create_engine
-from sqlalchemy.exc import SQLAlchemyError import geopandas as gpd
+from sqlalchemy.exc import SQLAlchemyError
+import geopandas as gpd
 
 import psycopg2
 
