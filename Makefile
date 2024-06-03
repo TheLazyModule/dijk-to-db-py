@@ -37,11 +37,15 @@ run-prod:
 	@echo "Running in production mode..."
 	@MODE=production nohup python3 main.py &
 
-start:
+start-prod:
 	$(MAKE) migrate_down
 	$(MAKE) migrate_up
 	$(MAKE) run-prod
 
+start-dev:
+	$(MAKE) migrate_down
+	$(MAKE) migrate_up
+	$(MAKE) run
 
 
 migrate_up:
