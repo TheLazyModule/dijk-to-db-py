@@ -1,6 +1,5 @@
 from sqlalchemy import text, create_engine
-from sqlalchemy.exc import SQLAlchemyError
-import geopandas as gpd
+from sqlalchemy.exc import SQLAlchemyError import geopandas as gpd
 
 import psycopg2
 
@@ -33,7 +32,7 @@ class Database:
                                                host=self.host)
             return True
         except psycopg2.Error as e:
-            print(f"Error connecting to the database: {e}")
+            print(f"❌ Error connecting to the database: {e}")
             return False
 
     def close(self):
@@ -50,7 +49,7 @@ class Database:
                 self.connection.commit()
             cursor.close()
         except psycopg2.Error as e:
-            print(f"Error executing query: {e}")
+            print(f"❌ Error executing query: {e}")
             self.connection.rollback()
 
     def insert_nodes_edges(self, graph):
@@ -59,23 +58,35 @@ class Database:
             x, y, label = graph.nodes[node].x, graph.nodes[node].y, graph.nodes[node].label
             point = f'POINT({x} {y})'
 
-            self.execute_query(
-                QUERIES['node'],
-                (label, point)
-            )
-            print(f"✅ Inserted node {i}")
-
-        print(" Inserting edges...")
-        for i, edge in enumerate(graph.weights, start=1):
-            self.execute_query(
-                QUERIES['edge'],
-                (
-                    extract_node_id(edge[0]),
-                    extract_node_id(edge[1]),
-                    graph.weights[edge]
+            try:
+                self.execute_query(
+                    QUERIES['node'],
+                    (label, point)
                 )
-            )
-            print(f"✅ Inserted edge {i}")
+                print(f"✅ Inserted node {i}")
+            except:
+                print("❌ Unexpected Error occurred when inserting nodes, exiting...")
+                return
+            else:
+                print("✅ Inserted 'nodes' successfully")
+
+            print("Inserting edges...")
+            try:
+                for i, edge in enumerate(graph.weights, start=1):
+                    self.execute_query(
+                        QUERIES['edge'],
+                        (
+                            extract_node_id(edge[0]),
+                            extract_node_id(edge[1]),
+                            graph.weights[edge]
+                        )
+                    )
+                    print(f"✅ Inserted edge {i}")
+            except:
+                print("❌ Unexpected Error occurred when inserting edges, exiting...")
+                return
+            else:
+                print("✅ Inserted 'nodes' successfully")
 
         print("✅ Insertion completed successfully without any errors..")
 
@@ -89,7 +100,7 @@ class Database:
             gdf = gpd.read_file(shapefile_path)
             print("✅ Shapefile read successfully.")
         except Exception as e:
-            print(f"Error reading shapefile: {e}")
+            print(f"❌ Error reading shapefile: {e}")
             return
 
         # Create SQLAlchemy engine
@@ -97,7 +108,7 @@ class Database:
             engine = create_engine(f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}')
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
-            print(f"Error creating SQLAlchemy engine: {e}")
+            print(f"❌ Error creating SQLAlchemy engine: {e}")
             return
 
         # Check the connection using SQLAlchemy
@@ -106,7 +117,7 @@ class Database:
                 connection.execute(text("SELECT 1"))
             print("✅ SQLAlchemy engine connection established.")
         except SQLAlchemyError as e:
-            print(f"Error connecting with SQLAlchemy engine: {e}")
+            print(f"❌ Error connecting with SQLAlchemy engine: {e}")
             return
 
         # Prepare data for insertion
@@ -119,5 +130,5 @@ class Database:
             gdf.to_postgis(table_name, engine, if_exists='append', index=False)
             print(f"✅ Data inserted into table '{table_name}' successfully.")
         except Exception as e:
-            print(f"Error inserting data into PostGIS: {e}")
+            print(f"❌ Error inserting data into PostGIS: {e}")
             return
