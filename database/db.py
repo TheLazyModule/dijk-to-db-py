@@ -64,72 +64,71 @@ class Database:
                     QUERIES['node'],
                     (label, point)
                 )
-                print(f"✅ Inserted node {i}")
             except:
                 print("❌ Unexpected Error occurred when inserting nodes, exiting...")
                 return
             else:
-                print("✅ Inserted 'nodes' successfully")
+                print(f"✅ Inserted 'node' {i} successfully")
 
-            print("Inserting edges...")
+        print("Inserting edges...")
+        for i, edge in enumerate(graph.weights, start=1):
             try:
-                for i, edge in enumerate(graph.weights, start=1):
-                    self.execute_query(
-                        QUERIES['edge'],
-                        (
-                            extract_node_id(edge[0]),
-                            extract_node_id(edge[1]),
-                            graph.weights[edge]
-                        )
+                self.execute_query(
+                    QUERIES['edge'],
+                    (
+                        extract_node_id(edge[0]),
+                        extract_node_id(edge[1]),
+                        graph.weights[edge]
                     )
-                    print(f"✅ Inserted edge {i}")
+                )
             except:
                 print("❌ Unexpected Error occurred when inserting edges, exiting...")
                 return
             else:
-                print("✅ Inserted 'nodes' successfully")
+                print(f"✅ Inserted 'edge {i}' successfully")
 
         print("✅ Insertion completed successfully without any errors..")
 
-    def insert_shapefile_to_postgis(self, shapefile_path, table_name):
-        if not self.connection:
-            print("✅ Database connection is not established.")
-            return
 
-        # Read the shapefile
-        try:
-            gdf = gpd.read_file(shapefile_path)
-            print("✅ Shapefile read successfully.")
-        except Exception as e:
-            print(f"❌ Error reading shapefile: {e}")
-            return
+def insert_shapefile_to_postgis(self, shapefile_path, table_name):
+    if not self.connection:
+        print("✅ Database connection is not established.")
+        return
 
-        # Create SQLAlchemy engine
-        try:
-            engine = create_engine(f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}')
-            print("✅ SQLAlchemy engine created.")
-        except SQLAlchemyError as e:
-            print(f"❌ Error creating SQLAlchemy engine: {e}")
-            return
+    # Read the shapefile
+    try:
+        gdf = gpd.read_file(shapefile_path)
+        print("✅ Shapefile read successfully.")
+    except Exception as e:
+        print(f"❌ Error reading shapefile: {e}")
+        return
 
-        # Check the connection using SQLAlchemy
-        try:
-            with engine.connect() as connection:
-                connection.execute(text("SELECT 1"))
-            print("✅ SQLAlchemy engine connection established.")
-        except SQLAlchemyError as e:
-            print(f"❌ Error connecting with SQLAlchemy engine: {e}")
-            return
+    # Create SQLAlchemy engine
+    try:
+        engine = create_engine(f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}')
+        print("✅ SQLAlchemy engine created.")
+    except SQLAlchemyError as e:
+        print(f"❌ Error creating SQLAlchemy engine: {e}")
+        return
 
-        # Prepare data for insertion
-        gdf = gdf[['name', 'geometry']]
-        gdf = gdf.rename(columns={'geometry': 'geom'})
-        gdf = gdf.set_geometry('geom')
+    # Check the connection using SQLAlchemy
+    try:
+        with engine.connect() as connection:
+            connection.execute(text("SELECT 1"))
+        print("✅ SQLAlchemy engine connection established.")
+    except SQLAlchemyError as e:
+        print(f"❌ Error connecting with SQLAlchemy engine: {e}")
+        return
 
-        # Insert data into PostGIS
-        try:
-            gdf.to_postgis(table_name, engine, if_exists='append', index=False)
-            print(f"✅ Data inserted into table '{table_name}' successfully.")
-        except Exception as e:
-            print(f"❌ Error inserting data into PostGIS: {e}")
-            return
+    # Prepare data for insertion
+    gdf = gdf[['name', 'geometry']]
+    gdf = gdf.rename(columns={'geometry': 'geom'})
+    gdf = gdf.set_geometry('geom')
+
+    # Insert data into PostGIS
+    try:
+        gdf.to_postgis(table_name, engine, if_exists='append', index=False)
+        print(f"✅ Data inserted into table '{table_name}' successfully.")
+    except Exception as e:
+        print(f"❌ Error inserting data into PostGIS: {e}")
+        return

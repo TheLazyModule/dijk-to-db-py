@@ -31,11 +31,18 @@ dropdb:
 
 run:
 	@echo "Running in development mode..."
-	@MODE=development python3 main.py
+	@MODE=development nohup python3 main.py &
 
 run-prod:
 	@echo "Running in production mode..."
-	@MODE=production python3 main.py
+	@MODE=production nohup python3 main.py &
+
+start:
+	$(MAKE) migrate_down
+	$(MAKE) migrate_up
+	$(MAKE) run-prod
+
+
 
 migrate_up:
 	migrate -path ./database/migrations -database "$(DATABASE_URL)" -verbose up
@@ -53,4 +60,4 @@ shuv:
 	git commit -a
 	git push
 
-.PHONY: down, up, run, createdb, dropdb, migrate_up, migrate_down, restart_db
+.PHONY: down, up, run, createdb, dropdb, migrate_up, migrate_down, restart_db, run-prod, start
