@@ -1,11 +1,11 @@
 CREATE
-    EXTENSION IF NOT EXISTS postgis;
+EXTENSION IF NOT EXISTS postgis;
 
 -- Create the 'node' table
 CREATE TABLE "node"
 (
     "id"   BIGSERIAL PRIMARY KEY,
-    "name" VARCHAR               NOT NULL UNIQUE,
+    "name" VARCHAR NOT NULL UNIQUE,
     "geom" GEOMETRY(POINT, 3857) NOT NULL UNIQUE
 );
 
@@ -24,9 +24,9 @@ CREATE TABLE "edge"
 -- Create the 'place' table
 CREATE TABLE "place"
 (
-    "id"       BIGSERIAL PRIMARY KEY,
-    "name"     VARCHAR NOT NULL,
-    "geom" GEOMETRY(POINT, 3857) NOT NULL
+    "id"   BIGSERIAL PRIMARY KEY,
+    "name" VARCHAR NOT NULL,
+    "geom" GEOMETRY(POINT, 3857) NOT NULL UNIQUE
 );
 
 -- Create the 'building' table
@@ -34,7 +34,7 @@ CREATE TABLE "building"
 (
     "id"   BIGSERIAL PRIMARY KEY,
     "name" VARCHAR NOT NULL,
-    "geom" GEOMETRY(POLYGON, 3857) NOT NULL
+    "geom" GEOMETRY(POLYGON, 3857) NOT NULL UNIQUE
 );
 
 -- Create the 'classroom' table

@@ -4,18 +4,6 @@ import geopandas as gdp
 from graph.graph import Node, Graph
 import re
 
-QUERIES = {
-    'node': """
-        INSERT INTO node (name, geom)
-        VALUES (%s, ST_GeomFromText(%s))
-        """,
-
-    'edge': """
-        INSERT INTO edge (from_node_id, to_node_id,  weight)
-        VALUES (%s, %s, %s)
-        """
-}
-
 
 class NodeKeyGenerator:
 
@@ -36,36 +24,6 @@ class NodeKeyGenerator:
 def extract_node_id(node_label_string):
     match = re.search(r'\d+', node_label_string)
     return int(match.group()) if match else None
-
-
-9
-
-
-def populate_db(db, graph):
-    print("Inserting nodes...")
-    for i, node in enumerate(graph.nodes, start=1):
-        x, y, label = graph.nodes[node].x, graph.nodes[node].y, graph.nodes[node].label
-        point = f'POINT({x} {y})'
-
-        db.execute_query(
-            QUERIES['node'],
-            (label, point)
-        )
-        print(f"✅ Inserted node {i + 1}")
-
-    print(" Inserting edges...")
-    for i, edge in enumerate(graph.weights, start=1):
-        db.execute_query(
-            QUERIES['edge'],
-            (
-                extract_node_id(edge[0]),
-                extract_node_id(edge[1]),
-                graph.weights[edge]
-            )
-        )
-        print(f"✅ Inserted edge {i + 1}")
-
-    print("✅ Insertion completed successfully without any errors..")
 
 
 def read_to_graph(file_name, should_densify_segments=False, distance=2):

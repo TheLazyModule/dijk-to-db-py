@@ -1,5 +1,5 @@
 from database.db import Database
-from utils.utils import read_to_graph, populate_db
+from utils.utils import read_to_graph
 import os
 
 if os.path.exists(path="paths.geojson"):
@@ -12,8 +12,9 @@ if os.path.exists(path="paths.geojson"):
         password=os.environ.get("PGPASSWORD")
     )
     db.connect()
-    populate_db(db, graph)
-
+    db.insert_nodes_edges(graph=graph)
+    db.insert_shapefile_to_postgis(shapefile_path='data/place/places.shp', table_name='place')
+    db.insert_shapefile_to_postgis(shapefile_path='data/building/building.shp', table_name='building')
     db.close()
 #
 #     distance_from_query_point, closest_node = graph.query_closest_location(x=-174320.829365919722477,
