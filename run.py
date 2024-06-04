@@ -5,9 +5,9 @@ from utils.utils import read_to_graph
 
 
 def config_env():
-    mode = os.getenv('MODE', 'production')  # Default to 'production' if MODE is not set
+    env_mode = os.getenv('ENV', 'production')  # Default to 'production' if ENV mode is not set
 
-    if mode == 'development':
+    if env_mode == 'development':
         dotenv_file = '.env.development'
     else:
         dotenv_file = '.env'

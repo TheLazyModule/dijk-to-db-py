@@ -2,7 +2,7 @@
 ENV_FILE := .env
 
 # Check for MODE and set the appropriate .env file
-ifeq ($(MODE),development)
+ifeq ($(ENV),development)
 	ENV_FILE := .env.development
 endif
 
@@ -31,11 +31,11 @@ dropdb:
 
 run:
 	@echo "Running in development mode..."
-	@MODE=development nohup python3 main.py &
+	@ENV=development  python3 main.py 
 
 run-prod:
 	@echo "Running in production mode..."
-	@MODE=production nohup python3 main.py &
+	@ENV=production nohup python3 main.py 
 
 start-prod:
 	$(MAKE) migrate_down
