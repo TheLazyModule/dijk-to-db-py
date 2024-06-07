@@ -4850,3 +4850,93 @@ Traceback (most recent call last):
   File "/home/denis/backend/dijk-to-db-py/run.py", line 27, in init_db
     db.insert_shapefile_to_postgis(shapefile_path='data/place/places.shp', table_name='place')
 AttributeError: 'Database' object has no attribute 'insert_shapefile_to_postgis'
+Inserting nodes...
+✅ Inserted 'node' 1 successfully
+✅ Inserted 'node' 2 successfully
+✅ Inserted 'node' 3 successfully
+✅ Inserted 'node' 4 successfully
+✅ Inserted 'node' 5 successfully
+✅ Inserted 'node' 6 successfully
+✅ Inserted 'node' 7 successfully
+✅ Inserted 'node' 8 successfully
+✅ Inserted 'node' 9 successfully
+✅ Inserted 'node' 10 successfully
+✅ Inserted 'node' 11 successfully
+✅ Inserted 'node' 12 successfully
+✅ Inserted 'node' 13 successfully
+✅ Inserted 'node' 14 successfully
+✅ Inserted 'node' 15 successfully
+✅ Inserted 'node' 16 successfully
+✅ Inserted 'node' 17 successfully
+✅ Inserted 'node' 18 successfully
+✅ Inserted 'node' 19 successfully
+✅ Inserted 'node' 20 successfully
+✅ Inserted 'node' 21 successfully
+✅ Inserted 'node' 22 successfully
+✅ Inserted 'node' 23 successfully
+✅ Inserted 'node' 24 successfully
+✅ Inserted 'node' 25 successfully
+✅ Inserted 'node' 26 successfully
+✅ Inserted 'node' 27 successfully
+✅ Inserted 'node' 28 successfully
+✅ Inserted 'node' 29 successfully
+✅ Inserted 'node' 30 successfully
+✅ Inserted 'node' 31 successfully
+✅ Inserted 'node' 32 successfully
+✅ Inserted 'node' 33 successfully
+✅ Inserted 'node' 34 successfully
+✅ Inserted 'node' 35 successfully
+✅ Inserted 'node' 36 successfully
+✅ Inserted 'node' 37 successfully
+✅ Inserted 'node' 38 successfully
+✅ Inserted 'node' 39 successfully
+✅ Inserted 'node' 40 successfully
+✅ Inserted 'node' 41 successfully
+✅ Inserted 'node' 42 successfully
+✅ Inserted 'node' 43 successfully
+❌ Unexpected Error occurred when inserting nodes, exiting...
+Traceback (most recent call last):
+  File "main.py", line 4, in <module>
+    run()
+  File "/home/denis/backend/dijk-to-db-py/run.py", line 36, in run
+    init_db(graph=graph)
+  File "/home/denis/backend/dijk-to-db-py/run.py", line 27, in init_db
+    db.insert_shapefile_to_postgis(shapefile_path='data/place/places.shp', table_name='place')
+AttributeError: 'Database' object has no attribute 'insert_shapefile_to_postgis'
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 72, in apport_excepthook
+    from apport.fileutils import likely_packaged, get_recent_crashes
+  File "/usr/lib/python3/dist-packages/apport/__init__.py", line 5, in <module>
+    from apport.report import Report
+  File "/usr/lib/python3/dist-packages/apport/report.py", line 32, in <module>
+    import apport.fileutils
+  File "/usr/lib/python3/dist-packages/apport/fileutils.py", line 12, in <module>
+    import os, glob, subprocess, os.path, time, pwd, sys, requests_unixsocket
+  File "/usr/lib/python3/dist-packages/requests_unixsocket/__init__.py", line 1, in <module>
+    import requests
+  File "/home/denis/.local/lib/python3.8/site-packages/requests/__init__.py", line 164, in <module>
+    from .api import delete, get, head, options, patch, post, put, request
+  File "/home/denis/.local/lib/python3.8/site-packages/requests/api.py", line 11, in <module>
+    from . import sessions
+  File "/home/denis/.local/lib/python3.8/site-packages/requests/sessions.py", line 15, in <module>
+    from .adapters import HTTPAdapter
+  File "/home/denis/.local/lib/python3.8/site-packages/requests/adapters.py", line 46, in <module>
+    from .models import Response
+  File "/home/denis/.local/lib/python3.8/site-packages/requests/models.py", line 54, in <module>
+    from .status_codes import codes
+  File "/home/denis/.local/lib/python3.8/site-packages/requests/status_codes.py", line 128, in <module>
+    _init()
+  File "/home/denis/.local/lib/python3.8/site-packages/requests/status_codes.py", line 112, in _init
+    setattr(codes, title, code)
+KeyboardInterrupt
+
+Original exception was:
+Traceback (most recent call last):
+  File "main.py", line 4, in <module>
+    run()
+  File "/home/denis/backend/dijk-to-db-py/run.py", line 36, in run
+    init_db(graph=graph)
+  File "/home/denis/backend/dijk-to-db-py/run.py", line 27, in init_db
+    db.insert_shapefile_to_postgis(shapefile_path='data/place/places.shp', table_name='place')
+AttributeError: 'Database' object has no attribute 'insert_shapefile_to_postgis'

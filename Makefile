@@ -35,7 +35,7 @@ run:
 
 run-prod:
 	@echo "Running in production mode..."
-	@ENV=production nohup python3 main.py 
+	@ENV=production python3 main.py 
 
 start-prod:
 	$(MAKE) migrate_down
