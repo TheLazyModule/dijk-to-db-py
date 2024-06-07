@@ -1,9 +1,9 @@
+from multiprocessing import Process
 from sqlalchemy import text, create_engine
 from sqlalchemy.exc import SQLAlchemyError
 import geopandas as gpd
-
 import psycopg2
-
+from psycopg2.extras import execute_batch
 from utils.utils import extract_node_id
 
 QUERIES = {
@@ -13,7 +13,7 @@ QUERIES = {
         """,
 
     'edge': """
-        INSERT INTO edge (from_node_id, to_node_id,  weight)
+        INSERT INTO edge (from_node_id, to_node_id, weight)
         VALUES (%s, %s, %s)
         """
 }
@@ -53,40 +53,59 @@ class Database:
             print(f"❌ Error executing query: {e}")
             self.connection.rollback()
 
-    def insert_nodes_edges(self, graph):
+    def insert_nodes(self, graph):
         print("Inserting nodes...")
-        for i, node in enumerate(graph.nodes, start=1):
-            x, y, label = graph.nodes[node].x, graph.nodes[node].y, graph.nodes[node].label
-            point = f'POINT({x} {y})'
+        node_data = [(graph.nodes[node].label,
+                      f'POINT({graph.nodes[node].x} {graph.nodes[node].y})')
+                     for node in graph.nodes
+                     ]
 
-            try:
-                self.execute_query(
-                    QUERIES['node'],
-                    (label, point)
-                )
-            except:
-                print("❌ Unexpected Error occurred when inserting nodes, exiting...")
-                return
-            else:
-                print(f"✅ Inserted 'node' {i} successfully")
+        try:
+            cursor = self.connection.cursor()
+            execute_batch(cursor, QUERIES['node'], node_data)
+            self.connection.commit()
+            cursor.close()
+            print(f"✅ Inserted {len(node_data)} nodes successfully")
+        except psycopg2.Error as e:
+            print(f"❌ Unexpected Error occurred when inserting nodes: {e}, exiting...")
+            self.connection.rollback()
+            return
+        print("✅ Node insertion completed successfully without any errors..")
 
+    def insert_edges(self, graph):
         print("Inserting edges...")
-        for i, edge in enumerate(graph.weights, start=1):
-            try:
-                self.execute_query(
-                    QUERIES['edge'],
-                    (
-                        extract_node_id(edge[0]),
-                        extract_node_id(edge[1]),
-                        graph.weights[edge]
-                    )
-                )
-            except:
-                print("❌ Unexpected Error occurred when inserting edges, exiting...")
-                return
-            else:
-                print(f"✅ Inserted 'edge {i}' successfully")
+        edge_data = [(extract_node_id(edge[0]), extract_node_id(edge[1]), graph.weights[edge]) for edge in
+                     graph.weights]
 
+        try:
+            cursor = self.connection.cursor()
+            execute_batch(cursor, QUERIES['edge'], edge_data)
+            self.connection.commit()
+            cursor.close()
+            print(f"✅ Inserted {len(edge_data)} edges successfully")
+        except psycopg2.Error as e:
+            print(f"❌ Unexpected Error occurred when inserting edges: {e}, exiting...")
+            self.connection.rollback()
+            return
+        print("✅ Edge insertion completed successfully without any errors..")
+
+    def insert_nodes_edges(self, graph):
+        if not self.connect():
+            return
+
+        # Create separate processes for inserting nodes and edges
+        node_process = Process(target=self.insert_nodes, args=(graph,))
+        edge_process = Process(target=self.insert_edges, args=(graph,))
+
+        # Start the processes
+        node_process.start()
+        edge_process.start()
+
+        # Wait for both processes to finish
+        node_process.join()
+        edge_process.join()
+
+        self.close()
         print("✅ Insertion completed successfully without any errors..")
 
     def insert_shapefile_to_postgis(self, shapefile_path, table_name):
