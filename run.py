@@ -1,5 +1,6 @@
 import os
 from database.db import Database
+
 from dotenv import load_dotenv
 from utils.utils import read_to_graph
 
