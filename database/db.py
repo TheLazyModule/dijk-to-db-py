@@ -1,4 +1,3 @@
-from multiprocessing import Process
 from sqlalchemy import text, create_engine
 from sqlalchemy.exc import SQLAlchemyError
 import geopandas as gpd
@@ -20,40 +19,47 @@ QUERIES = {
 
 
 class Database:
-    def __init__(self, dbname, user, host, password):
+    def __init__(self, dbname, user, host, password, sslmode='require'):
         self.dbname = dbname
         self.user = user
         self.host = host
         self.password = password
-        self.connection = None
+        self.sslmode = sslmode
 
     def connect(self):
         try:
-            self.connection = psycopg2.connect(dbname=self.dbname, user=self.user, password=self.password,
-                                               host=self.host)
-            return True
+            connection = psycopg2.connect(
+                dbname=self.dbname,
+                user=self.user,
+                password=self.password,
+                host=self.host,
+                sslmode=self.sslmode
+            )
+            return connection
         except psycopg2.Error as e:
             print(f"❌ Error connecting to the database: {e}")
-            return False
+            return None
 
-    def close(self):
-        if self.connection:
-            self.connection.close()
-
-    def execute_query(self, query, params=None, fetch=False):
+    def execute_query(self, connection, query, params=None, fetch=False):
         try:
-            cursor = self.connection.cursor()
+            cursor = connection.cursor()
             cursor.execute(query, params)
             if fetch:
-                return cursor.fetchall()
+                result = cursor.fetchall()
+                cursor.close()
+                return result
             else:
-                self.connection.commit()
-            cursor.close()
+                connection.commit()
+                cursor.close()
         except psycopg2.Error as e:
             print(f"❌ Error executing query: {e}")
-            self.connection.rollback()
+            connection.rollback()
 
     def insert_nodes(self, graph):
+        connection = self.connect()
+        if not connection:
+            return
+
         print("Inserting nodes...")
         node_data = [(graph.nodes[node].label,
                       f'POINT({graph.nodes[node].x} {graph.nodes[node].y})')
@@ -61,55 +67,53 @@ class Database:
                      ]
 
         try:
-            cursor = self.connection.cursor()
+            cursor = connection.cursor()
             execute_batch(cursor, QUERIES['node'], node_data)
-            self.connection.commit()
+            connection.commit()
             cursor.close()
             print(f"✅ Inserted {len(node_data)} nodes successfully")
         except psycopg2.Error as e:
             print(f"❌ Unexpected Error occurred when inserting nodes: {e}, exiting...")
-            self.connection.rollback()
-            return
+            connection.rollback()
+            cursor.close()
+        finally:
+            connection.close()
         print("✅ Node insertion completed successfully without any errors..")
 
     def insert_edges(self, graph):
+        connection = self.connect()
+        if not connection:
+            return
+
         print("Inserting edges...")
         edge_data = [(extract_node_id(edge[0]), extract_node_id(edge[1]), graph.weights[edge]) for edge in
                      graph.weights]
 
         try:
-            cursor = self.connection.cursor()
+            cursor = connection.cursor()
             execute_batch(cursor, QUERIES['edge'], edge_data)
-            self.connection.commit()
+            connection.commit()
             cursor.close()
             print(f"✅ Inserted {len(edge_data)} edges successfully")
         except psycopg2.Error as e:
             print(f"❌ Unexpected Error occurred when inserting edges: {e}, exiting...")
-            self.connection.rollback()
-            return
+            connection.rollback()
+            cursor.close()
+        finally:
+            connection.close()
         print("✅ Edge insertion completed successfully without any errors..")
 
     def insert_nodes_edges(self, graph):
-        if not self.connect():
-            return
+        # Insert nodes first
+        self.insert_nodes(graph)
+        # Insert edges after nodes
+        self.insert_edges(graph)
 
-        # Create separate processes for inserting nodes and edges
-        node_process = Process(target=self.insert_nodes, args=(graph,))
-        edge_process = Process(target=self.insert_edges, args=(graph,))
-
-        # Start the processes
-        node_process.start()
-        edge_process.start()
-
-        # Wait for both processes to finish
-        node_process.join()
-        edge_process.join()
-
-        self.close()
         print("✅ Insertion completed successfully without any errors..")
 
     def insert_shapefile_to_postgis(self, shapefile_path, table_name):
-        if not self.connection:
+        connection = self.connect()
+        if not connection:
             print("✅ Database connection is not established.")
             return
 
@@ -123,7 +127,8 @@ class Database:
 
         # Create SQLAlchemy engine
         try:
-            engine = create_engine(f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}')
+            engine = create_engine(
+                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode=require')
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
             print(f"❌ Error creating SQLAlchemy engine: {e}")

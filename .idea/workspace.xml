@@ -58,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "concurr",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/denis/backend/dijk-to-db-py/data/building",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -179,7 +179,7 @@
       <workItem from="1717414836605" duration="10148000" />
       <workItem from="1717515552269" duration="379000" />
       <workItem from="1717524741517" duration="569000" />
-      <workItem from="1717776763233" duration="1971000" />
+      <workItem from="1717776763233" duration="4790000" />
     </task>
     <servers />
   </component>

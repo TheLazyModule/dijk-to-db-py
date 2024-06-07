@@ -26,7 +26,6 @@ def init_db(graph):
     db.insert_nodes_edges(graph=graph)
     db.insert_shapefile_to_postgis(shapefile_path='data/place/places.shp', table_name='place')
     db.insert_shapefile_to_postgis(shapefile_path='data/building/building.shp', table_name='building')
-    db.close()
 
 
 def run():
