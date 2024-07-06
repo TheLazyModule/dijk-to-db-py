@@ -25,15 +25,14 @@ def init_db(graph):
     )
     db.connect()
     db.insert_nodes_edges(graph=graph)
-    db.insert_shapefile_to_postgis(shapefile_path='data/place/places.shp', table_name='place')
-    db.insert_shapefile_to_postgis(shapefile_path='data/building/building.shp', table_name='building')
+    db.insert_shapefile_to_postgis(shapefile_path='data//cities/london_cities.shp', table_name='city')
 
 
 def run():
     config_env()
     if os.path.exists(path="tlrn.geojson"):
-        graph = read_to_graph(file_name="tlrn.geojson", should_densify_segments=False, distance=2)
-        # init_db(graph=graph)
-        print(graph.edges)
+        graph = read_to_graph(file_name="tlrn.geojson", should_densify_segments=True, distance=2)
+        init_db(graph=graph)
+        # print(graph.edges)
     else:
         print("❌ File not found!\nExiting...")

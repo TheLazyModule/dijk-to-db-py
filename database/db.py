@@ -20,7 +20,7 @@ QUERIES = {
 
 
 class Database:
-    def __init__(self, dbname, user, host, password, sslmode='require'):
+    def __init__(self, dbname, user, host, password, sslmode='disable'):
         self.dbname = dbname
         self.user = user
         self.host = host
@@ -129,7 +129,7 @@ class Database:
         # Create SQLAlchemy engine
         try:
             engine = create_engine(
-                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode=require')
+                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode=disable')
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
             print(f"❌ Error creating SQLAlchemy engine: {e}")
