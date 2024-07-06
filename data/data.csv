@@ -1,0 +1,175 @@
+name,lat,lon
+Acton,51.5081,-0.278
+Aldgate,51.5135,-0.0751
+Anerley,51.4121,-0.0657
+Balham,51.4423,-0.1527
+Battersea,51.4646,-0.1647
+Bayswater,51.5112,-0.1872
+Beckenham,51.4088,-0.0252
+Belgravia,51.4939,-0.1513
+Bermondsey,51.4952,-0.0731
+Bethnal Green,51.5273,-0.063
+Bexley,51.4416,0.1487
+Blackheath,51.4676,0.0086
+Bloomsbury,51.521,-0.1254
+Borough,51.5014,-0.0931
+Brentford,51.4865,-0.3081
+Brixton,51.4627,-0.1151
+Brockley,51.4646,-0.0362
+Bromley,51.406,0.0132
+Camberwell,51.4746,-0.0926
+Camden,51.5416,-0.1433
+Catford,51.4452,-0.0209
+Charlton,51.4868,0.0355
+Chelsea,51.4875,-0.1698
+Chingford,51.6336,0.0105
+Chiswick,51.4911,-0.254
+Clapham,51.4626,-0.1383
+Clerkenwell,51.5255,-0.1084
+Covent Garden,51.5129,-0.1246
+Cricklewood,51.5597,-0.2112
+Croydon,51.3724,-0.0978
+Dagenham,51.5408,0.148
+Dalston,51.545,-0.0728
+Deptford,51.4793,-0.026
+Ealing,51.5133,-0.3089
+Earls Court,51.4914,-0.1931
+East Ham,51.5321,0.0554
+Edgware,51.6148,-0.2752
+Elephant and Castle,51.4944,-0.1004
+Eltham,51.45,0.0542
+Enfield,51.6521,-0.0815
+Euston,51.5286,-0.1337
+Finchley,51.6,-0.1928
+Finsbury Park,51.5646,-0.1052
+Fulham,51.475,-0.2032
+Golders Green,51.5725,-0.1949
+Greenwich,51.4821,-0.0048
+Hackney,51.5465,-0.0611
+Hammersmith,51.4927,-0.2234
+Hampstead,51.5567,-0.1781
+Hampton,51.4146,-0.3598
+Hanwell,51.5124,-0.3384
+Haringey,51.5906,-0.1114
+Harrow,51.58,-0.3411
+Hayes,51.5148,-0.4165
+Hendon,51.5825,-0.2285
+Herne Hill,51.453,-0.0944
+Highbury,51.55,-0.0977
+Highgate,51.5772,-0.1444
+Hillingdon,51.5333,-0.4533
+Holborn,51.5176,-0.1183
+Holland Park,51.5064,-0.2051
+Holloway,51.5521,-0.1143
+Homerton,51.5497,-0.0333
+Hornchurch,51.5547,0.2168
+Hornsey,51.5865,-0.1162
+Ilford,51.5588,0.0758
+Isle of Dogs,51.4963,-0.0147
+Isleworth,51.4747,-0.3364
+Islington,51.538,-0.1044
+Kennington,51.4878,-0.105
+Kensington,51.5013,-0.1911
+Kentish Town,51.5503,-0.14
+Kilburn,51.543,-0.1995
+King's Cross,51.5308,-0.1237
+Kingsbury,51.584,-0.2785
+Kingston upon Thames,51.4123,-0.3007
+Knightsbridge,51.5014,-0.1606
+Ladbroke Grove,51.5174,-0.21
+Lambeth,51.4881,-0.1133
+Lee,51.4494,0.0132
+Lewisham,51.4613,-0.0106
+Leyton,51.5569,-0.0057
+Leytonstone,51.5685,0.0082
+Limehouse,51.5128,-0.0377
+Maida Vale,51.5296,-0.1851
+Manor Park,51.5523,0.0456
+Marylebone,51.5202,-0.157
+Mayfair,51.5094,-0.1451
+Merton,51.4098,-0.1977
+Mile End,51.5255,-0.0336
+Mill Hill,51.614,-0.2394
+Mortlake,51.4684,-0.2662
+Muswell Hill,51.5901,-0.1407
+New Cross,51.4756,-0.0323
+New Malden,51.4,-0.2557
+Norbiton,51.412,-0.2841
+Norbury,51.4112,-0.1218
+Northolt,51.5485,-0.369
+Northwood,51.6114,-0.4287
+Norwood,51.4185,-0.1016
+Notting Hill,51.5096,-0.1973
+Nunhead,51.4696,-0.0525
+Old Ford,51.5334,-0.0235
+Orpington,51.3746,0.0977
+Paddington,51.516,-0.1734
+Palmers Green,51.6181,-0.1106
+Park Royal,51.53,-0.2818
+Peckham,51.4745,-0.067
+Penge,51.4173,-0.0602
+Perivale,51.5367,-0.3237
+Pimlico,51.4891,-0.134
+Plaistow,51.528,0.0335
+Poplar,51.5092,-0.0165
+Putney,51.459,-0.2167
+Raynes Park,51.4096,-0.2302
+Redbridge,51.5755,0.0858
+Richmond,51.4613,-0.3035
+Roehampton,51.4518,-0.2412
+Rotherhithe,51.5002,-0.0504
+Shepherd's Bush,51.5032,-0.2205
+Shoreditch,51.5262,-0.0781
+Sidcup,51.4265,0.1022
+Soho,51.5145,-0.1313
+South Kensington,51.4941,-0.1749
+South Norwood,51.3993,-0.0758
+Southall,51.5088,-0.3786
+Southgate,51.6327,-0.1267
+Southwark,51.503,-0.091
+St John's Wood,51.5335,-0.1701
+St Pancras,51.529,-0.1266
+Stamford Hill,51.5758,-0.0702
+Stanmore,51.6193,-0.3031
+Stepney,51.5197,-0.0457
+Stockwell,51.4728,-0.1227
+Stoke Newington,51.5613,-0.0732
+Stratford,51.5416,0.0006
+Streatham,51.4277,-0.1318
+Sutton,51.3605,-0.1935
+Swiss Cottage,51.5427,-0.1748
+Sydenham,51.4262,-0.054
+Teddington,51.4261,-0.3324
+Temple,51.5116,-0.1131
+The Borough,51.5001,-0.0945
+Tooting,51.4274,-0.1675
+Tottenham,51.5975,-0.0701
+Tower Hamlets,51.5174,-0.0401
+Tufnell Park,51.5607,-0.1288
+Turnham Green,51.4948,-0.255
+Twickenham,51.4486,-0.3371
+Upper Norwood,51.4181,-0.0831
+Uxbridge,51.5455,-0.4786
+Vauxhall,51.4862,-0.1237
+Victoria,51.4964,-0.1431
+Walthamstow,51.5861,-0.0198
+Walworth,51.4882,-0.0977
+Wandsworth,51.457,-0.19
+Wapping,51.5055,-0.0604
+Wanstead,51.5757,0.0282
+Wembley,51.5523,-0.2963
+West Brompton,51.4878,-0.1952
+West Dulwich,51.4386,-0.0904
+West Ealing,51.5138,-0.3201
+West Ham,51.528,0.0052
+West Hampstead,51.5529,-0.1919
+West Kensington,51.4902,-0.2067
+West Norwood,51.4322,-0.103
+Westminster,51.4975,-0.1357
+Whitechapel,51.5195,-0.0592
+Willesden,51.5446,-0.2227
+Wimbledon,51.4215,-0.2088
+Winchmore Hill,51.6331,-0.0977
+Wood Green,51.5963,-0.1094
+Woodford,51.6078,0.0347
+Woolwich,51.4902,0.067

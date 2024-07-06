@@ -40,7 +40,7 @@ def read_to_graph(file_name, should_densify_segments=False, distance=2):
             current_segment = list(current_row.geometry.coords)
 
         prev_coords_pair = None
-        for (x, y) in current_segment:
+        for (x, y, z) in current_segment:
             if prev_coords_pair is not None:
                 x_from, y_from = prev_coords_pair
                 from_node = Node(

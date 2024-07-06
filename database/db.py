@@ -1,8 +1,9 @@
-from sqlalchemy import text, create_engine
-from sqlalchemy.exc import SQLAlchemyError
 import geopandas as gpd
 import psycopg2
 from psycopg2.extras import execute_batch
+from sqlalchemy import text, create_engine
+from sqlalchemy.exc import SQLAlchemyError
+
 from utils.utils import extract_node_id
 
 QUERIES = {

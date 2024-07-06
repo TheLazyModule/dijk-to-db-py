@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="routing@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.52">
     <root id="1"/>
     <database id="2" parent="1" name="routing">
       <Current>1</Current>
@@ -5039,8 +5039,7 @@ unpackaged</AvailableUpdates>
 18923||10|D|G
 18923||10|w|G</Grants>
       <IntrospectionStateNumber>12303</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2024-06-01.16:21:06.888</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-06-01.16:21:08</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-01.16:21:08</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -15539,7 +15538,7 @@ unpackaged</AvailableUpdates>
     <sequence id="1172" parent="294" name="building_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>19742</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>739</StateNumber>
       <OwnerName>root</OwnerName>
@@ -15547,7 +15546,7 @@ unpackaged</AvailableUpdates>
     <sequence id="1173" parent="294" name="classroom_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>19751</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>739</StateNumber>
       <OwnerName>root</OwnerName>
@@ -15555,7 +15554,7 @@ unpackaged</AvailableUpdates>
     <sequence id="1174" parent="294" name="edge_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>19714</ObjectId>
-      <SequenceIdentity>1(4345)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>739</StateNumber>
       <OwnerName>root</OwnerName>
@@ -15563,7 +15562,7 @@ unpackaged</AvailableUpdates>
     <sequence id="1175" parent="294" name="node_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>19701</ObjectId>
-      <SequenceIdentity>1(7180)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>739</StateNumber>
       <OwnerName>root</OwnerName>
@@ -15571,7 +15570,7 @@ unpackaged</AvailableUpdates>
     <sequence id="1176" parent="294" name="place_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>19733</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>739</StateNumber>
       <OwnerName>root</OwnerName>

@@ -31,8 +31,9 @@ def init_db(graph):
 
 def run():
     config_env()
-    if os.path.exists(path="paths.geojson"):
-        graph = read_to_graph(file_name="paths.geojson", should_densify_segments=True, distance=2)
-        init_db(graph=graph)
+    if os.path.exists(path="tlrn.geojson"):
+        graph = read_to_graph(file_name="tlrn.geojson", should_densify_segments=False, distance=2)
+        # init_db(graph=graph)
+        print(graph.edges)
     else:
         print("❌ File not found!\nExiting...")

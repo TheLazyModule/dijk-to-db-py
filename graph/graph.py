@@ -1,7 +1,6 @@
-from collections import defaultdict
-import math
 import csv
-from typing import Tuple
+import math
+from collections import defaultdict
 
 
 class Node(object):
@@ -55,8 +54,6 @@ class Graph(object):
             print("Could not export")
         else:
             print(f"exported nodes successfully to {file_name}")
-
-
 
     @staticmethod
     def get_weight(from_node: Node, to_node: Node) -> float:

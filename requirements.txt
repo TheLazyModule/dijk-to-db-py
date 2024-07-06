@@ -1,0 +1,4 @@
+python-dotenv
+SQLAlchemy
+geopandas
+psycopg2-binary
