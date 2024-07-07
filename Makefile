@@ -64,4 +64,8 @@ shuv:
 	git commit -a
 	git push
 
+setup:
+	 pip install -r requirements.txt
+
+
 .PHONY: down, up, run, createdb, dropdb, migrate_up, migrate_down, restart_db, run-prod, start
