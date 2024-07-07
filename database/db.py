@@ -129,7 +129,7 @@ class Database:
         # Create SQLAlchemy engine
         try:
             engine = create_engine(
-                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode=disable')
+                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode={self.sslmode}')
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
             print(f"❌ Error creating SQLAlchemy engine: {e}")

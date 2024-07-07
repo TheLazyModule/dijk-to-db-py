@@ -31,5 +31,20 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="defaultdb@london-thelazymodule-2c07.k.aivencloud.com" uuid="18ca43dc-e0c8-49e4-b968-aad94390a97b">
+      <database-info product="PostgreSQL" version="15.7" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="15.7" exact-driver-version="42.6">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>avnadmin</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>

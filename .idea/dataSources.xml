@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/london_routes</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="defaultdb@london-thelazymodule-2c07.k.aivencloud.com" uuid="18ca43dc-e0c8-49e4-b968-aad94390a97b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://london-thelazymodule-2c07.k.aivencloud.com:19510/defaultdb</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
