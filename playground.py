@@ -1,8 +1,6 @@
-# import geopandas as gdp
-# from pprint import pprint
+array = [91]
+# for i in range(4):
+#     for j in range(4):
+#         array.append((i, j))
 #
-# buildings = gdp.read_file('/home/denis/Documents/places.shp')
-#
-# buildings.to_csv('places.csv', index=False)
-
-print("".join(list("Hello")[::-1]))
+# print(array)

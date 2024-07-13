@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 
 from database.db import Database
+from dijkstra.dijkstra import bidirectional_dijkstra
 from utils.utils import read_to_graph
 
 
@@ -32,11 +33,14 @@ def init_db(graph):
 
 def run():
     config_env()
-    if os.path.exists(path="tlrn.geojson"):
-        graph = read_to_graph(file_name="tlrn.geojson", should_densify_segments=True, distance=2)
+    if os.path.exists(path="tlrn_test.geojson"):
+        graph = read_to_graph(file_name="tlrn_pseudo_mercator_.geojson", should_densify_segments=False, distance=2)
+        distance, shortest_path = bidirectional_dijkstra(graph, 'n1', 'n5000')
+        print("shortest path:", distance)
+        print("path:", shortest_path)
         # init_db(graph=graph)
-        # print(graph.edges)
-        graph.nodes_to_csv('data/london_nodes.csv')
+        # print(len( graph.nodes ))
+        # graph.nodes_to_csv('data/london_nodes.csv')
 
     else:
         print("❌ File not found!\nExiting...")
