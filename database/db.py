@@ -115,7 +115,7 @@ class Database:
     def insert_shapefile_to_postgis(self, shapefile_path, table_name):
         connection = self.connect()
         if not connection:
-            print("✅ Database connection is not established.")
+            print("❌ Database connection is not established.")
             return
 
         # Read the shapefile
