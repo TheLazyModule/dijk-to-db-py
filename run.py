@@ -44,7 +44,7 @@ def run():
         # print("path:", shortest_path)
         init_db(graph=graph)
         # print(len( graph.nodes ))
-        # graph.nodes_to_csv('data/london_nodes.csv')
+        graph.nodes_to_csv()
 
     else:
         print("❌ File not found!\nExiting...")
