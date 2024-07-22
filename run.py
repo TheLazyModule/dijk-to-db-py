@@ -25,7 +25,7 @@ def init_db(graph):
         user=os.environ.get("PGUSER"),
         host=os.environ.get("PGHOST"),
         password=os.environ.get("PGPASSWORD"),
-        sslmode='disable'
+        sslmode='require'
     )
     db.connect()
     db.insert_nodes_edges(graph=graph)
