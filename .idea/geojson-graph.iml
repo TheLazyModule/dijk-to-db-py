@@ -5,6 +5,7 @@
       <configuration sdkName="Python 3.10 (dijk-to-db-py)" />
     </facet>
   </component>
+  <component name="Go" enabled="true" />
   <component name="NewModuleRootManager">
     <content url="file://$USER_HOME$/.local/lib/python3.8/site-packages">
       <sourceFolder url="file://$USER_HOME$/.local/lib/python3.8/site-packages" isTestSource="false" />

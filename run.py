@@ -25,7 +25,6 @@ def init_db(graph):
         password=os.environ.get("PGPASSWORD"),
         sslmode='disable' if os.environ.get("ENV") == "development" else "require"
     )
-    print(db.get_db_url())
     db.connect()
     db.insert_nodes_edges(graph=graph)
     db.insert_shapefile_to_postgis(shapefile_path='data/place/places.shp', table_name='place')
@@ -36,6 +35,7 @@ def run():
     config_env()
     if os.path.exists("paths.geojson"):
         graph = read_to_graph(file_name="paths.geojson", should_densify_segments=True, distance=2)
-        init_db(graph=graph)
+        # init_db(graph=graph)
+        graph.nodes_to_csv()
     else:
         print("❌ File not found!\nExiting...")

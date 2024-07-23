@@ -3,6 +3,7 @@ import psycopg2
 from psycopg2.extras import execute_batch
 from sqlalchemy import text, create_engine
 from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.engine.url import URL
 
 from utils.utils import extract_node_id
 
@@ -26,9 +27,6 @@ class Database:
         self.host = host
         self.password = password
         self.sslmode = sslmode
-
-    def get_db_url(self):
-        return f'postgresql://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode={self.sslmode}'
 
     def connect(self):
         try:
@@ -127,8 +125,15 @@ class Database:
 
         # Create SQLAlchemy engine
         try:
-            engine = create_engine(
-                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode={self.sslmode}')
+            database_url = URL.create(
+                drivername="postgresql+psycopg2",
+                username=self.user,
+                password=self.password,
+                host=self.host,
+                database=self.dbname,
+                query={"sslmode": self.sslmode}
+            )
+            engine = create_engine(database_url)
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
             print(f"❌ Error creating SQLAlchemy engine: {e}")
