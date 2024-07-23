@@ -1,10 +1,8 @@
 import os
-import timeit
 
 from dotenv import load_dotenv
 
 from database.db import Database
-from dijkstra.dijkstra import bidirectional_dijkstra, dijkstra
 from utils.utils import read_to_graph
 
 
@@ -25,7 +23,7 @@ def init_db(graph):
         user=os.environ.get("PGUSER"),
         host=os.environ.get("PGHOST"),
         password=os.environ.get("PGPASSWORD"),
-        sslmode='disable'
+        sslmode='disable' if os.environ.get("ENV") == 'development' else 'require'
     )
     db.connect()
     db.insert_nodes_edges(graph=graph)
