@@ -1,12 +1,12 @@
 services:
   db:
-    image: "${IMAGE}"
+    image: "postgis/postgis:15-3.4-alpine"
     environment:
-      POSTGRES_USER: "${PGUSER}"
-      POSTGRES_PASSWORD: "${PGPASSWORD}"
-      POSTGRES_DB: "${PGDATABASE}"
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "london"
+      POSTGRES_DB: "london_routes"
     ports:
-      - "${PG_PORT_MAPPING}"
+      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 

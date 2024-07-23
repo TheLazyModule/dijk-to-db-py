@@ -18,9 +18,11 @@ QUERIES = {
         """
 }
 
+from sqlalchemy.engine.url import URL
+
 
 class Database:
-    def __init__(self, dbname, user, host, password, sslmode='disable'):
+    def __init__(self, dbname, user, host, password, sslmode='require'):
         self.dbname = dbname
         self.user = user
         self.host = host
@@ -64,8 +66,7 @@ class Database:
         print("Inserting nodes...")
         node_data = [(graph.nodes[node].label,
                       f'POINT({graph.nodes[node].x} {graph.nodes[node].y})')
-                     for node in graph.nodes
-                     ]
+                     for node in graph.nodes]
 
         try:
             cursor = connection.cursor()
@@ -105,11 +106,8 @@ class Database:
         print("✅ Edge insertion completed successfully without any errors..")
 
     def insert_nodes_edges(self, graph):
-        # Insert nodes first
         self.insert_nodes(graph)
-        # Insert edges after nodes
         self.insert_edges(graph)
-
         print("✅ Insertion completed successfully without any errors..")
 
     def insert_shapefile_to_postgis(self, shapefile_path, table_name):
@@ -128,8 +126,15 @@ class Database:
 
         # Create SQLAlchemy engine
         try:
-            engine = create_engine(
-                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode={self.sslmode}')
+            database_url = URL.create(
+                drivername="postgresql+psycopg2",
+                username=self.user,
+                password=self.password,
+                host=self.host,
+                database=self.dbname,
+                query={"sslmode": self.sslmode}
+            )
+            engine = create_engine(database_url)
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
             print(f"❌ Error creating SQLAlchemy engine: {e}")

@@ -25,7 +25,7 @@ def init_db(graph):
         user=os.environ.get("PGUSER"),
         host=os.environ.get("PGHOST"),
         password=os.environ.get("PGPASSWORD"),
-        sslmode='require'
+        sslmode='disable'
     )
     db.connect()
     db.insert_nodes_edges(graph=graph)
@@ -35,7 +35,7 @@ def init_db(graph):
 def run():
     config_env()
     if os.path.exists(path="tlrn_roehampton.geojson"):
-        graph = read_to_graph(file_name="tlrn_roehampton.geojson", should_densify_segments=True, distance=2)
+        graph = read_to_graph(file_name="tlrn_roehampton.geojson", should_densify_segments=False, distance=2)
         # print(graph.edges)
         # distance, shortest_path = bidirectional_dijkstra(graph, 'n1', 'n20')
         # Time the execution of the dijkstra algorithm
