@@ -37,7 +37,7 @@ class Database:
             )
             return connection
         except psycopg2.Error as e:
-            print(f"❌ Error connecting to the database: {e}")
+            print(f"❌ Error connecting to the db: {e}")
             return None
 
     def execute_query(self, connection, query, params=None, fetch=False):
@@ -128,7 +128,7 @@ class Database:
         # Create SQLAlchemy engine
         try:
             engine = create_engine(
-                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode=require')
+                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode={self.sslmode}')
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
             print(f"❌ Error creating SQLAlchemy engine: {e}")

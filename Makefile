@@ -52,11 +52,11 @@ start-dev:
 
 migrate_up:
 	@echo "$(ENV_FILE)"
-	migrate -path ./database/migrations -database "$(DATABASE_URL)" -verbose up
+	migrate -path ./db/migrations -database "$(DATABASE_URL)" -verbose up
 
 migrate_down:
 	@echo "$(ENV_FILE)"
-	migrate -path ./database/migrations -database "$(DATABASE_URL)" -verbose down
+	migrate -path ./db/migrations -database "$(DATABASE_URL)" -verbose down
 
 migrate_up_1:
 	@echo "$(ENV_FILE)"

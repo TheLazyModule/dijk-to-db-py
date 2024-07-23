@@ -1,8 +1,10 @@
+import re
+
+import geopandas as gdp
 from shapely import Point, LineString
 from shapely.wkt import loads
-import geopandas as gdp
+
 from graph.graph import Node, Graph
-import re
 
 
 class NodeKeyGenerator:
