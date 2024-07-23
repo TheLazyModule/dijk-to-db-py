@@ -1,8 +1,9 @@
-from sqlalchemy import text, create_engine
-from sqlalchemy.exc import SQLAlchemyError
 import geopandas as gpd
 import psycopg2
 from psycopg2.extras import execute_batch
+from sqlalchemy import text, create_engine
+from sqlalchemy.exc import SQLAlchemyError
+
 from utils.utils import extract_node_id
 
 QUERIES = {
@@ -25,6 +26,9 @@ class Database:
         self.host = host
         self.password = password
         self.sslmode = sslmode
+
+    def get_db_url(self):
+        return f'postgresql://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode={self.sslmode}'
 
     def connect(self):
         try:
@@ -63,8 +67,7 @@ class Database:
         print("Inserting nodes...")
         node_data = [(graph.nodes[node].label,
                       f'POINT({graph.nodes[node].x} {graph.nodes[node].y})')
-                     for node in graph.nodes
-                     ]
+                     for node in graph.nodes]
 
         try:
             cursor = connection.cursor()
@@ -104,17 +107,14 @@ class Database:
         print("✅ Edge insertion completed successfully without any errors..")
 
     def insert_nodes_edges(self, graph):
-        # Insert nodes first
         self.insert_nodes(graph)
-        # Insert edges after nodes
         self.insert_edges(graph)
-
         print("✅ Insertion completed successfully without any errors..")
 
     def insert_shapefile_to_postgis(self, shapefile_path, table_name):
         connection = self.connect()
         if not connection:
-            print("✅ Database connection is not established.")
+            print("❌ Database connection is not established.")
             return
 
         # Read the shapefile
@@ -128,7 +128,7 @@ class Database:
         # Create SQLAlchemy engine
         try:
             engine = create_engine(
-                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode=require')
+                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode={self.sslmode}')
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
             print(f"❌ Error creating SQLAlchemy engine: {e}")

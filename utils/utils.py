@@ -30,6 +30,7 @@ def read_to_graph(file_name, should_densify_segments=False, distance=2):
     new_graph = Graph()
     node_key_generator = NodeKeyGenerator()
 
+    print("reading file")
     gdf = gdp.read_file(file_name)
 
     for index, current_row in gdf.iterrows():
