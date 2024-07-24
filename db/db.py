@@ -1,8 +1,10 @@
-from sqlalchemy import text, create_engine
-from sqlalchemy.exc import SQLAlchemyError
 import geopandas as gpd
 import psycopg2
 from psycopg2.extras import execute_batch
+from sqlalchemy import text, create_engine
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.engine.url import URL
+
 from utils.utils import extract_node_id
 
 QUERIES = {
@@ -37,7 +39,7 @@ class Database:
             )
             return connection
         except psycopg2.Error as e:
-            print(f"❌ Error connecting to the db: {e}")
+            print(f"❌ Error connecting to the database: {e}")
             return None
 
     def execute_query(self, connection, query, params=None, fetch=False):
@@ -63,8 +65,7 @@ class Database:
         print("Inserting nodes...")
         node_data = [(graph.nodes[node].label,
                       f'POINT({graph.nodes[node].x} {graph.nodes[node].y})')
-                     for node in graph.nodes
-                     ]
+                     for node in graph.nodes]
 
         try:
             cursor = connection.cursor()
@@ -104,17 +105,14 @@ class Database:
         print("✅ Edge insertion completed successfully without any errors..")
 
     def insert_nodes_edges(self, graph):
-        # Insert nodes first
         self.insert_nodes(graph)
-        # Insert edges after nodes
         self.insert_edges(graph)
-
         print("✅ Insertion completed successfully without any errors..")
 
     def insert_shapefile_to_postgis(self, shapefile_path, table_name):
         connection = self.connect()
         if not connection:
-            print("✅ Database connection is not established.")
+            print("❌ Database connection is not established.")
             return
 
         # Read the shapefile
@@ -127,8 +125,15 @@ class Database:
 
         # Create SQLAlchemy engine
         try:
-            engine = create_engine(
-                f'postgresql+psycopg2://{self.user}:{self.password}@{self.host}/{self.dbname}?sslmode={self.sslmode}')
+            database_url = URL.create(
+                drivername="postgresql+psycopg2",
+                username=self.user,
+                password=self.password,
+                host=self.host,
+                database=self.dbname,
+                query={"sslmode": self.sslmode}
+            )
+            engine = create_engine(database_url)
             print("✅ SQLAlchemy engine created.")
         except SQLAlchemyError as e:
             print(f"❌ Error creating SQLAlchemy engine: {e}")
