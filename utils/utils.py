@@ -74,12 +74,17 @@ def read_to_graph(file_name, should_densify_segments=False, distance=2):
 
 def line_densify(polyline, step_dist):
     coords = list(polyline.coords)
+    # Ensure all coordinates are 2D (strip out z-coordinate if present)
+    coords = [(x, y) for x, y, *_ in coords]
     segments = list(zip(coords[:-1], coords[1:]))
     dens_coords = []
     for i, segment in enumerate(segments):
         a, b = segment
         seg_coords = segment_densify(a, b, step_dist)
-        dens_coords.extend(seg_coords if i == 0 else seg_coords[1:])
+        if i == 0:
+            dens_coords.extend(seg_coords)
+        else:
+            dens_coords.extend(seg_coords[1:])
     return LineString(dens_coords)
 
 
@@ -90,11 +95,9 @@ def segment_densify(pt_a, pt_b, step_dist):
     dense_coords = [pt_a]
     while inter_dist < geom.length:
         pt = geom.interpolate(inter_dist)
-        gap = pt.distance(pt_b_geom)
-        if gap > step_dist:
-            dense_coords.append(pt)
+        dense_coords.append((pt.x, pt.y))  # Ensure it's a tuple (x, y)
         inter_dist += step_dist
-    dense_coords.append(pt_b)
+    dense_coords.append(pt_b)  # Append the endpoint as a tuple
     return dense_coords
 
 
