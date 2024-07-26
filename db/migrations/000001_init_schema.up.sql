@@ -1,6 +1,13 @@
 CREATE
 EXTENSION IF NOT EXISTS postgis;
 
+-- Create the 'category' table
+CREATE TABLE "category"
+(
+    "id"   BIGSERIAL PRIMARY KEY,
+    "name" VARCHAR NOT NULL UNIQUE
+);
+
 -- Create the 'node' table
 CREATE TABLE "node"
 (
@@ -24,17 +31,21 @@ CREATE TABLE "edge"
 -- Create the 'place' table
 CREATE TABLE "place"
 (
-    "id"   BIGSERIAL PRIMARY KEY,
-    "name" VARCHAR NOT NULL,
-    "geom" GEOMETRY(POINT, 3857) NOT NULL UNIQUE
+    "id"          BIGSERIAL PRIMARY KEY,
+    "name"        VARCHAR NOT NULL,
+    "geom"        GEOMETRY(POINT, 3857) NOT NULL UNIQUE,
+    "category_id" INT,
+    CONSTRAINT "fk_category_id" FOREIGN KEY ("category_id") REFERENCES "category" ("id")
 );
 
 -- Create the 'building' table
 CREATE TABLE "building"
 (
-    "id"   BIGSERIAL PRIMARY KEY,
-    "name" VARCHAR NOT NULL,
-    "geom" GEOMETRY(POLYGON, 3857) NOT NULL UNIQUE
+    "id"          BIGSERIAL PRIMARY KEY,
+    "name"        VARCHAR NOT NULL,
+    "geom"        GEOMETRY(POLYGON, 3857) NOT NULL UNIQUE,
+    "category_id" INT,
+    CONSTRAINT "fk_category_id" FOREIGN KEY ("category_id") REFERENCES "category" ("id")
 );
 
 -- Create the 'classroom' table
@@ -43,6 +54,8 @@ CREATE TABLE "classroom"
     "id"          BIGSERIAL PRIMARY KEY,
     "building_id" BIGINT  NOT NULL,
     "room_code"   VARCHAR NOT NULL,
+    "category_id" INT,
+    CONSTRAINT "fk_category_id" FOREIGN KEY ("category_id") REFERENCES "category" ("id"),
     CONSTRAINT "fk_building_id" FOREIGN KEY ("building_id") REFERENCES "building" ("id"),
     CONSTRAINT "classroom_unique_constraint" UNIQUE ("building_id", "room_code")
 );

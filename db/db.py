@@ -2,8 +2,8 @@ import geopandas as gpd
 import psycopg2
 from psycopg2.extras import execute_batch
 from sqlalchemy import text, create_engine
-from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.engine.url import URL
+from sqlalchemy.exc import SQLAlchemyError
 
 from utils.utils import extract_node_id
 
@@ -160,3 +160,21 @@ class Database:
         except Exception as e:
             print(f"❌ Error inserting data into PostGIS: {e}")
             return
+
+    def execute_sql_file(self, sql_file_path):
+        connection = self.connect()
+        if not connection:
+            return
+
+        try:
+            cursor = connection.cursor()
+            with open(sql_file_path, 'r') as sql_file:
+                cursor.execute(sql_file.read())
+            connection.commit()
+            cursor.close()
+            print(f"✅ SQL file '{sql_file_path}' executed successfully.")
+        except (Exception, psycopg2.Error) as e:
+            print(f"❌ Error executing SQL file: {e}")
+            connection.rollback()
+        finally:
+            connection.close()
