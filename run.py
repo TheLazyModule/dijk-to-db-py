@@ -35,7 +35,7 @@ def run():
     config_env()
     if os.path.exists("paths.geojson"):
         graph = read_to_graph(file_name="paths.geojson", should_densify_segments=True, distance=2)
-        # init_db(graph=graph)
+        init_db(graph=graph)
         graph.nodes_to_csv()
     else:
         print("❌ File not found!\nExiting...")
