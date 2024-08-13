@@ -2,7 +2,7 @@ import os
 
 from dotenv import load_dotenv
 
-from database.db import Database
+from db.db import Database
 from utils.utils import read_to_graph
 
 

@@ -48,12 +48,27 @@ start-dev:
 	$(MAKE) run
 
 
+
+
 migrate_up:
-	migrate -path ./database/migrations -database "$(DATABASE_URL)" -verbose up
 	@echo "$(ENV_FILE)"
+	migrate -path ./db/migrations -database "$(DATABASE_URL)" -verbose up
 
 migrate_down:
-	migrate -path ./database/migrations -database "$(DATABASE_URL)" -verbose down
+	@echo "$(ENV_FILE)"
+	migrate -path ./db/migrations -database "$(DATABASE_URL)" -verbose down
+
+migrate_up_1:
+	@echo "$(ENV_FILE)"
+	migrate -path ./db/migrations -database "$(DATABASE_URL)" -verbose up 1
+
+migrate_up_2:
+	@echo "$(ENV_FILE)"
+	migrate -path ./db/migrations -database "$(DATABASE_URL)" -verbose up 2
+
+migrate_down_1:
+	@echo "$(ENV_FILE)"
+	migrate -path ./db/migrations -database "$(DATABASE_URL)" -verbose down 1
 
 restart_db:
 	$(MAKE) migrate_down
