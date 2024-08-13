@@ -28,10 +28,14 @@ def init_db(graph):
     db.connect()
     db.insert_nodes_edges(graph=graph)
     db.execute_sql_file('data/category.sql')
+    print("inserted into category table")
     db.insert_shapefile_to_postgis(shapefile_path='data/place/places.shp', table_name='place')
     db.insert_shapefile_to_postgis(shapefile_path='data/building/building.shp', table_name='building')
+    print("inserted into building and place tables")
     db.execute_sql_file('data/building/building_images.sql')
+    print("Inserted building images")
     db.execute_sql_file('data/classroom/classroom.sql')
+    print("Inserted classroom data")
 
 
 def run():
