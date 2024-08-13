@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b10e0911-eefd-4e7a-9662-bd25b82c58d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/graph/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph/graph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/nodes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/data/classroom/classroom.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/classroom/classroom.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/migrations/000001_init_schema.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/000001_init_schema.up.sql" afterDir="false" />
->>>>>>> classroom
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,18 +61,6 @@
     &quot;Notification.DoNotAsk-CythonWarning&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-<<<<<<< HEAD
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/denis/backend/dijk-to-db-py/data/building&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-=======
     &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
@@ -95,7 +77,6 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
->>>>>>> classroom
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {

@@ -2,13 +2,8 @@ import geopandas as gpd
 import psycopg2
 from psycopg2.extras import execute_batch
 from sqlalchemy import text, create_engine
-<<<<<<< HEAD:database/db.py
-from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy.engine.url import URL
-=======
 from sqlalchemy.engine.url import URL
 from sqlalchemy.exc import SQLAlchemyError
->>>>>>> classroom:db/db.py
 
 from utils.utils import extract_node_id
 

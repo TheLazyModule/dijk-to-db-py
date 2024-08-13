@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="routing@localhost">
-<<<<<<< HEAD
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.52">
-    <root id="1">
-      <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>786</IntrospectionStateNumber>
-      <ServerVersion>15.7</ServerVersion>
-      <StartupTime>1721725555</StartupTime>
-=======
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
@@ -22,7 +14,6 @@
       <IntrospectionStateNumber>933</IntrospectionStateNumber>
       <ServerVersion>15.7</ServerVersion>
       <StartupTime>1721922432</StartupTime>
->>>>>>> classroom
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -826,11 +817,7 @@ true posixrules
 19116||10|C|G
 19116||-9223372036854775808|U|G
 19116||10|U|G</Grants>
-<<<<<<< HEAD
-      <IntrospectionStateNumber>786</IntrospectionStateNumber>
-=======
       <IntrospectionStateNumber>933</IntrospectionStateNumber>
->>>>>>> classroom
       <ObjectId>16384</ObjectId>
       <OwnerName>root</OwnerName>
     </database>
@@ -5847,13 +5834,8 @@ unpackaged</AvailableUpdates>
 18923||10|t|G
 18923||10|D|G
 18923||10|w|G</Grants>
-<<<<<<< HEAD
-      <IntrospectionStateNumber>786</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-07-23.09:07:07</LastIntrospectionLocalTimestamp>
-=======
       <IntrospectionStateNumber>933</IntrospectionStateNumber>
       <LastIntrospectionLocalTimestamp>2024-07-25.15:47:33</LastIntrospectionLocalTimestamp>
->>>>>>> classroom
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -16350,12 +16332,7 @@ unpackaged</AvailableUpdates>
       <OwnerName>root</OwnerName>
     </routine>
     <sequence id="1172" parent="294" name="building_id_seq">
-<<<<<<< HEAD
-      <DasType>bigint|0s</DasType>
-      <ObjectId>19744</ObjectId>
-=======
       <ObjectId>20444</ObjectId>
->>>>>>> classroom
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>917</StateNumber>
@@ -16363,12 +16340,7 @@ unpackaged</AvailableUpdates>
       <OwnerName>root</OwnerName>
     </sequence>
     <sequence id="1173" parent="294" name="classroom_id_seq">
-<<<<<<< HEAD
-      <DasType>bigint|0s</DasType>
-      <ObjectId>19755</ObjectId>
-=======
       <ObjectId>20455</ObjectId>
->>>>>>> classroom
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>917</StateNumber>
@@ -16376,12 +16348,7 @@ unpackaged</AvailableUpdates>
       <OwnerName>root</OwnerName>
     </sequence>
     <sequence id="1174" parent="294" name="edge_id_seq">
-<<<<<<< HEAD
-      <DasType>bigint|0s</DasType>
-      <ObjectId>19714</ObjectId>
-=======
       <ObjectId>20414</ObjectId>
->>>>>>> classroom
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>917</StateNumber>
@@ -16389,12 +16356,7 @@ unpackaged</AvailableUpdates>
       <OwnerName>root</OwnerName>
     </sequence>
     <sequence id="1175" parent="294" name="node_id_seq">
-<<<<<<< HEAD
-      <DasType>bigint|0s</DasType>
-      <ObjectId>19701</ObjectId>
-=======
       <ObjectId>20401</ObjectId>
->>>>>>> classroom
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>917</StateNumber>
@@ -16402,12 +16364,7 @@ unpackaged</AvailableUpdates>
       <OwnerName>root</OwnerName>
     </sequence>
     <sequence id="1176" parent="294" name="place_id_seq">
-<<<<<<< HEAD
-      <DasType>bigint|0s</DasType>
-      <ObjectId>19733</ObjectId>
-=======
       <ObjectId>20433</ObjectId>
->>>>>>> classroom
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>917</StateNumber>
@@ -16415,24 +16372,14 @@ unpackaged</AvailableUpdates>
       <OwnerName>root</OwnerName>
     </sequence>
     <table id="1177" parent="294" name="building">
-<<<<<<< HEAD
-      <ObjectId>19745</ObjectId>
-      <StateNumber>739</StateNumber>
-=======
       <ObjectId>20445</ObjectId>
       <StateNumber>920</StateNumber>
->>>>>>> classroom
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
     <table id="1178" parent="294" name="classroom">
-<<<<<<< HEAD
-      <ObjectId>19756</ObjectId>
-      <StateNumber>739</StateNumber>
-=======
       <ObjectId>20456</ObjectId>
       <StateNumber>920</StateNumber>
->>>>>>> classroom
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
@@ -26173,14 +26120,9 @@ unpackaged</AvailableUpdates>
       <DefaultExpression>nextval(&apos;building_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-<<<<<<< HEAD
-      <StateNumber>739</StateNumber>
-      <SequenceId>19744</SequenceId>
-=======
       <StateNumber>917</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <SequenceId>20444</SequenceId>
->>>>>>> classroom
       <TypeId>20</TypeId>
     </column>
     <column id="3570" parent="1177" name="name">
@@ -26206,30 +26148,12 @@ unpackaged</AvailableUpdates>
     <index id="3573" parent="1177" name="building_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-<<<<<<< HEAD
-      <ObjectId>19751</ObjectId>
-=======
       <ObjectId>20451</ObjectId>
->>>>>>> classroom
       <Primary>1</Primary>
       <StateNumber>917</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <index id="3573" parent="1177" name="building_geom_key">
-      <ColNames>geom</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19753</ObjectId>
-      <StateNumber>739</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="3574" parent="1177" name="idx_building_name">
-      <ColNames>name</ColNames>
-      <ObjectId>19776</ObjectId>
-      <StateNumber>739</StateNumber>
-=======
     <index id="3574" parent="1177" name="building_geom_key">
       <ColNames>geom</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -26242,44 +26166,11 @@ unpackaged</AvailableUpdates>
       <ColNames>name</ColNames>
       <ObjectId>20476</ObjectId>
       <StateNumber>917</StateNumber>
->>>>>>> classroom
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-<<<<<<< HEAD
-    <index id="3575" parent="1177" name="idx_building_geom">
-      <ColNames>geom</ColNames>
-      <ObjectId>19777</ObjectId>
-      <StateNumber>739</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="3576" parent="1177" name="building_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19752</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>739</StateNumber>
-      <UnderlyingIndexId>19751</UnderlyingIndexId>
-    </key>
-    <key id="3577" parent="1177" name="building_geom_key">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19754</ObjectId>
-      <StateNumber>739</StateNumber>
-      <UnderlyingIndexId>19753</UnderlyingIndexId>
-    </key>
-    <column id="3578" parent="1178" name="id">
-      <DasType>bigint|0s</DasType>
-      <DefaultExpression>nextval(&apos;classroom_id_seq&apos;::regclass)</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>739</StateNumber>
-      <SequenceId>19755</SequenceId>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="3579" parent="1178" name="building_id">
-      <DasType>bigint|0s</DasType>
-=======
     <index id="3576" parent="1177" name="idx_building_geom">
       <ColNames>geom</ColNames>
       <ObjectId>20477</ObjectId>
@@ -26309,38 +26200,18 @@ unpackaged</AvailableUpdates>
       <TypeId>20</TypeId>
     </column>
     <column id="3580" parent="1178" name="building_id">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>917</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3580" parent="1178" name="room_code">
-      <DasType>varchar|0s</DasType>
-      <NotNull>1</NotNull>
-=======
     <column id="3581" parent="1178" name="room_code">
->>>>>>> classroom
       <Position>3</Position>
       <StateNumber>920</StateNumber>
       <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-<<<<<<< HEAD
-    <foreign-key id="3581" parent="1178" name="fk_building_id">
-      <ColNames>building_id</ColNames>
-      <ObjectId>19766</ObjectId>
-      <StateNumber>739</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>19745</RefTableId>
-    </foreign-key>
-    <index id="3582" parent="1178" name="classroom_pkey">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19762</ObjectId>
-=======
     <column id="3582" parent="1178" name="name">
       <Position>4</Position>
       <StateNumber>920</StateNumber>
@@ -26370,25 +26241,16 @@ unpackaged</AvailableUpdates>
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20462</ObjectId>
->>>>>>> classroom
       <Primary>1</Primary>
       <StateNumber>917</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <index id="3583" parent="1178" name="classroom_unique_constraint">
-      <ColNames>building_id
-room_code</ColNames>
-      <ObjectId>19764</ObjectId>
-      <StateNumber>739</StateNumber>
-=======
     <index id="3587" parent="1178" name="classroom_unique_constraint">
       <ColNames>building_id
 room_code</ColNames>
       <ObjectId>20464</ObjectId>
       <StateNumber>917</StateNumber>
->>>>>>> classroom
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationIds>
@@ -26398,18 +26260,6 @@ pg_catalog</CollationParentNames>
       <CollationNames>
 default</CollationNames>
     </index>
-<<<<<<< HEAD
-    <index id="3584" parent="1178" name="idx_classroom_building_id">
-      <ColNames>building_id</ColNames>
-      <ObjectId>19778</ObjectId>
-      <StateNumber>739</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="3585" parent="1178" name="idx_classroom_room_code">
-      <ColNames>room_code</ColNames>
-      <ObjectId>19779</ObjectId>
-      <StateNumber>739</StateNumber>
-=======
     <index id="3588" parent="1178" name="idx_classroom_building_id">
       <ColNames>building_id</ColNames>
       <ObjectId>20478</ObjectId>
@@ -26420,28 +26270,11 @@ default</CollationNames>
       <ColNames>room_code</ColNames>
       <ObjectId>20479</ObjectId>
       <StateNumber>917</StateNumber>
->>>>>>> classroom
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-<<<<<<< HEAD
-    <key id="3586" parent="1178" name="classroom_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19763</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>739</StateNumber>
-      <UnderlyingIndexId>19762</UnderlyingIndexId>
-    </key>
-    <key id="3587" parent="1178" name="classroom_unique_constraint">
-      <ObjectId>19765</ObjectId>
-      <StateNumber>739</StateNumber>
-      <UnderlyingIndexId>19764</UnderlyingIndexId>
-    </key>
-    <column id="3588" parent="1179" name="id">
-      <DasType>bigint|0s</DasType>
-=======
     <key id="3590" parent="1178" name="classroom_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20463</ObjectId>
@@ -26455,7 +26288,6 @@ default</CollationNames>
       <UnderlyingIndexId>20464</UnderlyingIndexId>
     </key>
     <column id="3592" parent="1179" name="id">
->>>>>>> classroom
       <DefaultExpression>nextval(&apos;edge_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -26464,69 +26296,42 @@ default</CollationNames>
       <SequenceId>20414</SequenceId>
       <TypeId>20</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3589" parent="1179" name="from_node_id">
-      <DasType>bigint|0s</DasType>
-=======
     <column id="3593" parent="1179" name="from_node_id">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>917</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3590" parent="1179" name="to_node_id">
-      <DasType>bigint|0s</DasType>
-=======
     <column id="3594" parent="1179" name="to_node_id">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>917</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3591" parent="1179" name="weight">
-      <DasType>double precision|0s</DasType>
-=======
     <column id="3595" parent="1179" name="weight">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>917</StateNumber>
       <StoredType>double precision|0s</StoredType>
       <TypeId>701</TypeId>
     </column>
-<<<<<<< HEAD
-    <foreign-key id="3592" parent="1179" name="fk_from_node_id">
-=======
     <foreign-key id="3596" parent="1179" name="fk_from_node_id">
->>>>>>> classroom
       <ColNames>from_node_id</ColNames>
       <ObjectId>20423</ObjectId>
       <StateNumber>917</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>20402</RefTableId>
     </foreign-key>
-<<<<<<< HEAD
-    <foreign-key id="3593" parent="1179" name="fk_to_node_id">
-=======
     <foreign-key id="3597" parent="1179" name="fk_to_node_id">
->>>>>>> classroom
       <ColNames>to_node_id</ColNames>
       <ObjectId>20428</ObjectId>
       <StateNumber>917</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>20402</RefTableId>
     </foreign-key>
-<<<<<<< HEAD
-    <index id="3594" parent="1179" name="edge_pkey">
-=======
     <index id="3598" parent="1179" name="edge_pkey">
->>>>>>> classroom
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20419</ObjectId>
@@ -26535,11 +26340,7 @@ default</CollationNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <index id="3595" parent="1179" name="edge_unique_constraint">
-=======
     <index id="3599" parent="1179" name="edge_unique_constraint">
->>>>>>> classroom
       <ColNames>from_node_id
 to_node_id</ColNames>
       <ObjectId>20421</ObjectId>
@@ -26547,22 +26348,6 @@ to_node_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <index id="3596" parent="1179" name="idx_edge_from_to">
-      <ColNames>from_node_id
-to_node_id</ColNames>
-      <ObjectId>19772</ObjectId>
-      <StateNumber>739</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="3597" parent="1179" name="idx_edge_weight">
-      <ColNames>weight</ColNames>
-      <ObjectId>19773</ObjectId>
-      <StateNumber>739</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="3598" parent="1179" name="edge_pkey">
-=======
     <index id="3600" parent="1179" name="idx_edge_from_to">
       <ColNames>from_node_id
 to_node_id</ColNames>
@@ -26577,29 +26362,18 @@ to_node_id</ColNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="3602" parent="1179" name="edge_pkey">
->>>>>>> classroom
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20420</ObjectId>
       <Primary>1</Primary>
       <StateNumber>917</StateNumber>
       <UnderlyingIndexId>20419</UnderlyingIndexId>
     </key>
-<<<<<<< HEAD
-    <key id="3599" parent="1179" name="edge_unique_constraint">
-      <ObjectId>19722</ObjectId>
-      <StateNumber>739</StateNumber>
-      <UnderlyingIndexId>19721</UnderlyingIndexId>
-    </key>
-    <column id="3600" parent="1180" name="id">
-      <DasType>bigint|0s</DasType>
-=======
     <key id="3603" parent="1179" name="edge_unique_constraint">
       <ObjectId>20422</ObjectId>
       <StateNumber>917</StateNumber>
       <UnderlyingIndexId>20421</UnderlyingIndexId>
     </key>
     <column id="3604" parent="1180" name="id">
->>>>>>> classroom
       <DefaultExpression>nextval(&apos;node_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -26608,35 +26382,21 @@ to_node_id</ColNames>
       <SequenceId>20401</SequenceId>
       <TypeId>20</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3601" parent="1180" name="name">
-      <DasType>varchar|0s</DasType>
-=======
     <column id="3605" parent="1180" name="name">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>917</StateNumber>
       <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3602" parent="1180" name="geom">
-      <DasType>geometry(Point,3857)|0v</DasType>
-=======
     <column id="3606" parent="1180" name="geom">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>917</StateNumber>
       <StoredType>geometry(Point,3857)|0v</StoredType>
       <TypeId>18046</TypeId>
     </column>
-<<<<<<< HEAD
-    <index id="3603" parent="1180" name="node_pkey">
-=======
     <index id="3607" parent="1180" name="node_pkey">
->>>>>>> classroom
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20408</ObjectId>
@@ -26645,11 +26405,7 @@ to_node_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <index id="3604" parent="1180" name="node_name_key">
-=======
     <index id="3608" parent="1180" name="node_name_key">
->>>>>>> classroom
       <ColNames>name</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20410</ObjectId>
@@ -26660,11 +26416,7 @@ to_node_id</ColNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-<<<<<<< HEAD
-    <index id="3605" parent="1180" name="node_geom_key">
-=======
     <index id="3609" parent="1180" name="node_geom_key">
->>>>>>> classroom
       <ColNames>geom</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20412</ObjectId>
@@ -26672,14 +26424,6 @@ to_node_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <index id="3606" parent="1180" name="idx_node_geom">
-      <ObjectId>19771</ObjectId>
-      <StateNumber>739</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="3607" parent="1180" name="node_pkey">
-=======
     <index id="3610" parent="1180" name="idx_node_geom">
       <ColNames>geom</ColNames>
       <ObjectId>20471</ObjectId>
@@ -26687,39 +26431,25 @@ to_node_id</ColNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="3611" parent="1180" name="node_pkey">
->>>>>>> classroom
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20409</ObjectId>
       <Primary>1</Primary>
       <StateNumber>917</StateNumber>
       <UnderlyingIndexId>20408</UnderlyingIndexId>
     </key>
-<<<<<<< HEAD
-    <key id="3608" parent="1180" name="node_name_key">
-=======
     <key id="3612" parent="1180" name="node_name_key">
->>>>>>> classroom
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20411</ObjectId>
       <StateNumber>917</StateNumber>
       <UnderlyingIndexId>20410</UnderlyingIndexId>
     </key>
-<<<<<<< HEAD
-    <key id="3609" parent="1180" name="node_geom_key">
-=======
     <key id="3613" parent="1180" name="node_geom_key">
->>>>>>> classroom
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20413</ObjectId>
       <StateNumber>917</StateNumber>
       <UnderlyingIndexId>20412</UnderlyingIndexId>
     </key>
-<<<<<<< HEAD
-    <column id="3610" parent="1181" name="id">
-      <DasType>bigint|0s</DasType>
-=======
     <column id="3614" parent="1181" name="id">
->>>>>>> classroom
       <DefaultExpression>nextval(&apos;place_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -26728,35 +26458,21 @@ to_node_id</ColNames>
       <SequenceId>20433</SequenceId>
       <TypeId>20</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3611" parent="1181" name="name">
-      <DasType>varchar|0s</DasType>
-=======
     <column id="3615" parent="1181" name="name">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>917</StateNumber>
       <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3612" parent="1181" name="geom">
-      <DasType>geometry(Point,3857)|0v</DasType>
-=======
     <column id="3616" parent="1181" name="geom">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>917</StateNumber>
       <StoredType>geometry(Point,3857)|0v</StoredType>
       <TypeId>18046</TypeId>
     </column>
-<<<<<<< HEAD
-    <index id="3613" parent="1181" name="place_pkey">
-=======
     <index id="3617" parent="1181" name="place_pkey">
->>>>>>> classroom
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20440</ObjectId>
@@ -26765,20 +26481,6 @@ to_node_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <index id="3614" parent="1181" name="place_geom_key">
-      <ColNames>geom</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19742</ObjectId>
-      <StateNumber>739</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="3615" parent="1181" name="idx_place_name">
-      <ColNames>name</ColNames>
-      <ObjectId>19774</ObjectId>
-      <StateNumber>739</StateNumber>
-=======
     <index id="3618" parent="1181" name="place_geom_key">
       <ColNames>geom</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -26791,49 +26493,24 @@ to_node_id</ColNames>
       <ColNames>name</ColNames>
       <ObjectId>20474</ObjectId>
       <StateNumber>917</StateNumber>
->>>>>>> classroom
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-<<<<<<< HEAD
-    <index id="3616" parent="1181" name="idx_place_geom">
-=======
     <index id="3620" parent="1181" name="idx_place_geom">
->>>>>>> classroom
       <ColNames>geom</ColNames>
       <ObjectId>20475</ObjectId>
       <StateNumber>917</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <index id="3617" parent="1181" name="idx_place_geom">
-      <ColNames>geom</ColNames>
-      <ObjectId>19775</ObjectId>
-      <StateNumber>739</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="3618" parent="1181" name="place_pkey">
-=======
     <key id="3621" parent="1181" name="place_pkey">
->>>>>>> classroom
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20441</ObjectId>
       <Primary>1</Primary>
       <StateNumber>917</StateNumber>
       <UnderlyingIndexId>20440</UnderlyingIndexId>
     </key>
-<<<<<<< HEAD
-    <key id="3619" parent="1181" name="place_geom_key">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19743</ObjectId>
-      <StateNumber>739</StateNumber>
-      <UnderlyingIndexId>19742</UnderlyingIndexId>
-    </key>
-    <column id="3620" parent="1182" name="version">
-      <DasType>bigint|0s</DasType>
-=======
     <key id="3622" parent="1181" name="place_geom_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20443</ObjectId>
@@ -26841,30 +26518,20 @@ to_node_id</ColNames>
       <UnderlyingIndexId>20442</UnderlyingIndexId>
     </key>
     <column id="3623" parent="1182" name="version">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>737</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3621" parent="1182" name="dirty">
-      <DasType>boolean|0s</DasType>
-=======
     <column id="3624" parent="1182" name="dirty">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>737</StateNumber>
       <StoredType>boolean|0s</StoredType>
       <TypeId>16</TypeId>
     </column>
-<<<<<<< HEAD
-    <index id="3622" parent="1182" name="schema_migrations_pkey">
-=======
     <index id="3625" parent="1182" name="schema_migrations_pkey">
->>>>>>> classroom
       <ColNames>version</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>19697</ObjectId>
@@ -26873,88 +26540,51 @@ to_node_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <key id="3623" parent="1182" name="schema_migrations_pkey">
-=======
     <key id="3626" parent="1182" name="schema_migrations_pkey">
->>>>>>> classroom
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>19698</ObjectId>
       <Primary>1</Primary>
       <StateNumber>737</StateNumber>
       <UnderlyingIndexId>19697</UnderlyingIndexId>
     </key>
-<<<<<<< HEAD
-    <check id="3624" parent="1183" name="spatial_ref_sys_srid_check">
-=======
     <check id="3627" parent="1183" name="spatial_ref_sys_srid_check">
->>>>>>> classroom
       <ColNames>srid</ColNames>
       <ObjectId>18361</ObjectId>
       <Predicate>(srid &gt; 0) AND (srid &lt;= 998999)</Predicate>
       <StateNumber>732</StateNumber>
     </check>
-<<<<<<< HEAD
-    <column id="3625" parent="1183" name="srid">
-      <DasType>integer|0s</DasType>
-=======
     <column id="3628" parent="1183" name="srid">
->>>>>>> classroom
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>732</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3626" parent="1183" name="auth_name">
-      <DasType>varchar(256)|0s</DasType>
-=======
     <column id="3629" parent="1183" name="auth_name">
->>>>>>> classroom
       <Position>2</Position>
       <StateNumber>732</StateNumber>
       <StoredType>varchar(256)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3627" parent="1183" name="auth_srid">
-      <DasType>integer|0s</DasType>
-=======
     <column id="3630" parent="1183" name="auth_srid">
->>>>>>> classroom
       <Position>3</Position>
       <StateNumber>732</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3628" parent="1183" name="srtext">
-      <DasType>varchar(2048)|0s</DasType>
-=======
     <column id="3631" parent="1183" name="srtext">
->>>>>>> classroom
       <Position>4</Position>
       <StateNumber>732</StateNumber>
       <StoredType>varchar(2048)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-<<<<<<< HEAD
-    <column id="3629" parent="1183" name="proj4text">
-      <DasType>varchar(2048)|0s</DasType>
-=======
     <column id="3632" parent="1183" name="proj4text">
->>>>>>> classroom
       <Position>5</Position>
       <StateNumber>732</StateNumber>
       <StoredType>varchar(2048)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-<<<<<<< HEAD
-    <index id="3630" parent="1183" name="spatial_ref_sys_pkey">
-=======
     <index id="3633" parent="1183" name="spatial_ref_sys_pkey">
->>>>>>> classroom
       <ColNames>srid</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>18364</ObjectId>
@@ -26963,184 +26593,98 @@ to_node_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-<<<<<<< HEAD
-    <key id="3631" parent="1183" name="spatial_ref_sys_pkey">
-=======
     <key id="3634" parent="1183" name="spatial_ref_sys_pkey">
->>>>>>> classroom
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>18365</ObjectId>
       <Primary>1</Primary>
       <StateNumber>732</StateNumber>
       <UnderlyingIndexId>18364</UnderlyingIndexId>
     </key>
-<<<<<<< HEAD
-    <column id="3632" parent="1184" name="f_table_catalog">
-      <DasType>name|0s</DasType>
-=======
     <column id="3635" parent="1184" name="f_table_catalog">
->>>>>>> classroom
       <Position>1</Position>
       <StateNumber>732</StateNumber>
       <StoredType>name|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3633" parent="1184" name="f_table_schema">
-      <DasType>name|0s</DasType>
-=======
     <column id="3636" parent="1184" name="f_table_schema">
->>>>>>> classroom
       <Position>2</Position>
       <StateNumber>732</StateNumber>
       <StoredType>name|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3634" parent="1184" name="f_table_name">
-      <DasType>name|0s</DasType>
-=======
     <column id="3637" parent="1184" name="f_table_name">
->>>>>>> classroom
       <Position>3</Position>
       <StateNumber>732</StateNumber>
       <StoredType>name|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3635" parent="1184" name="f_geography_column">
-      <DasType>name|0s</DasType>
-=======
     <column id="3638" parent="1184" name="f_geography_column">
->>>>>>> classroom
       <Position>4</Position>
       <StateNumber>732</StateNumber>
       <StoredType>name|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3636" parent="1184" name="coord_dimension">
-      <DasType>integer|0s</DasType>
-=======
     <column id="3639" parent="1184" name="coord_dimension">
->>>>>>> classroom
       <Position>5</Position>
       <StateNumber>732</StateNumber>
       <StoredType>integer|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3637" parent="1184" name="srid">
-      <DasType>integer|0s</DasType>
-=======
     <column id="3640" parent="1184" name="srid">
->>>>>>> classroom
       <Position>6</Position>
       <StateNumber>732</StateNumber>
       <StoredType>integer|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3638" parent="1184" name="type">
-      <DasType>text|0s</DasType>
-=======
     <column id="3641" parent="1184" name="type">
->>>>>>> classroom
       <Position>7</Position>
       <StateNumber>732</StateNumber>
       <StoredType>text|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3639" parent="1185" name="f_table_catalog">
-      <DasType>varchar(256)|0s</DasType>
-=======
     <column id="3642" parent="1185" name="f_table_catalog">
->>>>>>> classroom
       <Position>1</Position>
       <StateNumber>732</StateNumber>
       <StoredType>varchar(256)|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3640" parent="1185" name="f_table_schema">
-      <DasType>name|0s</DasType>
-=======
     <column id="3643" parent="1185" name="f_table_schema">
->>>>>>> classroom
       <Position>2</Position>
       <StateNumber>732</StateNumber>
       <StoredType>name|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3641" parent="1185" name="f_table_name">
-      <DasType>name|0s</DasType>
-=======
     <column id="3644" parent="1185" name="f_table_name">
->>>>>>> classroom
       <Position>3</Position>
       <StateNumber>732</StateNumber>
       <StoredType>name|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3642" parent="1185" name="f_geometry_column">
-      <DasType>name|0s</DasType>
-=======
     <column id="3645" parent="1185" name="f_geometry_column">
->>>>>>> classroom
       <Position>4</Position>
       <StateNumber>732</StateNumber>
       <StoredType>name|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3643" parent="1185" name="coord_dimension">
-      <DasType>integer|0s</DasType>
-=======
     <column id="3646" parent="1185" name="coord_dimension">
->>>>>>> classroom
       <Position>5</Position>
       <StateNumber>732</StateNumber>
       <StoredType>integer|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3644" parent="1185" name="srid">
-      <DasType>integer|0s</DasType>
-=======
     <column id="3647" parent="1185" name="srid">
->>>>>>> classroom
       <Position>6</Position>
       <StateNumber>732</StateNumber>
       <StoredType>integer|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <column id="3645" parent="1185" name="type">
-      <DasType>varchar(30)|0s</DasType>
-=======
     <column id="3648" parent="1185" name="type">
->>>>>>> classroom
       <Position>7</Position>
       <StateNumber>732</StateNumber>
       <StoredType>varchar(30)|0s</StoredType>
     </column>
-<<<<<<< HEAD
-    <rule id="3646" parent="1185" name="geometry_columns_insert">
-=======
     <rule id="3649" parent="1185" name="geometry_columns_insert">
->>>>>>> classroom
       <Events>I</Events>
       <ObjectId>18928</ObjectId>
       <SourceTextLength>92</SourceTextLength>
       <StateNumber>732</StateNumber>
       <Turn>instead-of</Turn>
     </rule>
-<<<<<<< HEAD
-    <rule id="3647" parent="1185" name="geometry_columns_update">
-=======
     <rule id="3650" parent="1185" name="geometry_columns_update">
->>>>>>> classroom
       <Events>U</Events>
       <ObjectId>18929</ObjectId>
       <SourceTextLength>92</SourceTextLength>
       <StateNumber>732</StateNumber>
       <Turn>instead-of</Turn>
     </rule>
-<<<<<<< HEAD
-    <rule id="3648" parent="1185" name="geometry_columns_delete">
-=======
     <rule id="3651" parent="1185" name="geometry_columns_delete">
->>>>>>> classroom
       <Events>D</Events>
       <ObjectId>18930</ObjectId>
       <SourceTextLength>92</SourceTextLength>

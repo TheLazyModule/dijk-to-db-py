@@ -43,7 +43,7 @@ class Graph(object):
                 file_name = "shortest_path.csv"
             all_nodes = [(self.nodes[node].x, self.nodes[node].y, self.nodes[node].label) for node in paths]
         if file_name is None:
-            file_name = "nodes_dense.csv"
+            file_name = "nodes.csv"
 
         headers = ['X', 'Y', 'L']
         try:

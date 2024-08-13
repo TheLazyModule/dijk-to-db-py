@@ -1,7 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS postgis;
 
 -- Create the 'category' table
-CREATE TABLE "category"
+CREATE TABLE IF NOT EXISTS "category"
 (
     "id"   SERIAL PRIMARY KEY,
     "name" VARCHAR NOT NULL UNIQUE
