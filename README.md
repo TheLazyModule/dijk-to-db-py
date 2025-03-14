@@ -6,3 +6,5 @@
 - Graph densification by some sigma or delta
 - Export to csv.
 
+
+- Watch video [Talk on routing](https://youtu.be/MUkA9NvvdUU)
